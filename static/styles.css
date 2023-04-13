@@ -80,7 +80,7 @@ body {
     height: 100%;
 }
 
-.feedback-button:hover {
+.feedback-button:not(.like-clicked):not(.dislike-clicked):hover {
     color: rgba(0,0,0,0.6);
     cursor: pointer;
 }
@@ -147,4 +147,12 @@ button:disabled {
     background: none;
     border: none;
     pointer-events: none;
+}
+
+.like-clicked {
+    color: #4CAF50;
+}
+
+.dislike-clicked {
+    color: #f44336;
 }

@@ -116,6 +116,14 @@ function createFeedbackButton(isLike) {
         } else {
           showFeedbackForm(button);
         }
+
+        // Make the clicked button always visible and disable its clickability
+        button.classList.add(isLike ? 'like-clicked' : 'dislike-clicked');
+        button.disabled = true;
+
+        // Hide the other button
+        const otherButton = button.parentElement.querySelector(isLike ? '.dislike' : '.like');
+        otherButton.style.display = 'none';
     });
     
     return button;
@@ -219,4 +227,30 @@ feedbackExpected.addEventListener("change", (e) => {
   checkOtherInput();
 });
 
-dismissBtn.addEventListener("click", disableFeedbackForm);
+dismissBtn.addEventListener("click", () => {
+    disableFeedbackForm();
+
+    // Find the specific message related to the feedback input
+    const userMessageText = feedbackInput.value;
+    const userMessageElement = Array.from(chatContainer.querySelectorAll('.user-message .message-text'))
+        .find(element => element.textContent === userMessageText);
+
+    if (userMessageElement) {
+        // Find the associated chat message and update the data-liked attribute
+        const chatMessage = userMessageElement.parentElement.nextElementSibling;
+        chatMessage.dataset.liked = 'false';
+
+        // Find the associated like and dislike buttons for the specific message
+        const likeButton = chatMessage.querySelector('.like');
+        const dislikeButton = chatMessage.querySelector('.dislike');
+
+        likeButton.classList.remove('like-clicked');
+        dislikeButton.classList.remove('dislike-clicked');
+
+        likeButton.disabled = false;
+        dislikeButton.disabled = false;
+
+        likeButton.style.display = 'inline-block';
+        dislikeButton.style.display = 'inline-block';
+    }
+});
