@@ -158,6 +158,7 @@ messageForm.addEventListener('submit', async e => {
     e.preventDefault();
     const message = messageInput.value;
     messageInput.value = "";
+    messageInput.disabled = true;
     addChatMessage(message, 'user');
     chatContainer.scrollTop = chatContainer.scrollHeight;
     
@@ -177,6 +178,7 @@ messageForm.addEventListener('submit', async e => {
 
     addChatMessage(randomResponse(data.label), 'bot', data.label);
     chatContainer.scrollTop = chatContainer.scrollHeight;
+    messageInput.disabled = false;
 });
 
 // Submit feedback
