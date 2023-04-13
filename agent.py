@@ -1,6 +1,6 @@
 import nltk
 import fuzzywuzzy as fuzz
-# nltk.download('stopwords')
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
 # from faq_data import faq_dict
