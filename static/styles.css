@@ -1,0 +1,150 @@
+body {
+    font-family: 'Sofia Sans', 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    height: 500px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}
+.header {
+    text-align: center;
+    margin-bottom: 1em;
+    padding: 2em 0;
+}
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    flex-grow: 1;
+    scroll-behavior: smooth;
+}
+.chat-message {
+    display: flex;
+    gap: 5px;
+}
+
+.user-message {
+    align-self: flex-end;
+}
+.bot-message {
+    align-self: flex-start;
+}
+
+.user-message .message-text {
+    background-color: #d1e7dd;
+    border-radius: 2em 2em 0 2em;
+}
+.bot-message .message-text {
+    background-color: #e9ecef;
+    border-radius: 2em 2em 2em 0;
+}
+
+.message-text {
+    padding: 0.75em 1em;
+}
+
+.bot-message:hover .feedback-buttons {
+    visibility: visible;
+}
+.feedback-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-left: 0.5em;
+    visibility: hidden;
+}
+
+.feedback-button {
+    color: rgba(0,0,0,0.3);
+    height: 1.5em;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.feedback-button > svg {
+    width: 100%;
+    height: 100%;
+}
+
+.feedback-button:hover {
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+.dislike {
+    transform: rotate(180deg);
+}
+
+#message-input-form {
+    display: flex;
+    margin-top: 2em;
+}
+
+#message-input-form input {
+    padding: 0.5em;
+    border: 1px solid #dee2e6;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+    resize: none;
+    flex-grow: 1;
+    font-family: inherit;
+    outline: none;
+}
+#message-input-form button {
+    border-radius: 0 5px 5px 0;
+}
+
+button {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+}
+.submit-btn:not(:disabled):hover {
+    background-color: #0062cc;
+}
+.dismiss-btn {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #555;
+}
+.dismiss-btn:not(:disabled):hover {
+    background-color: #555;
+    color: #fff;
+}
+
+#feedback-form { 
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.3;
+    transition: 200ms opacity ease;
+}
+
+#feedback-form-field {
+    background: none;
+    border: none;
+    pointer-events: none;
+}
