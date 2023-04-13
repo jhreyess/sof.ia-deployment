@@ -1,5 +1,6 @@
 import nltk
 import fuzzywuzzy as fuzz
+nltk.download('punkt')
 nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
