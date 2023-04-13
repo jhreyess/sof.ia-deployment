@@ -79,6 +79,19 @@ function addChatMessage(message, sender, topic) {
     chatContainer.appendChild(chatMessage);
 }
 
+function addWritingBubble() {
+    const writingBubble = document.createElement('div');
+    writingBubble.classList.add('chat-message', 'bot-message');
+    writingBubble.id = 'writing-bubble';
+
+    const messageText = document.createElement('div');
+    messageText.classList.add('message-text');
+    messageText.textContent = 'SOF.IA está escribiendo...';
+
+    writingBubble.appendChild(messageText);
+    chatContainer.appendChild(writingBubble);
+}
+
 function createFeedbackButtons() {
     const feedbackButtons = document.createElement('div');
     feedbackButtons.classList.add('feedback-buttons');
@@ -139,6 +152,9 @@ messageForm.addEventListener('submit', async e => {
     messageInput.value = "";
     addChatMessage(message, 'user');
     chatContainer.scrollTop = chatContainer.scrollHeight;
+    
+    addWritingBubble();
+    chatContainer.scrollTop = chatContainer.scrollHeight;
 
     const response = await fetch('/predict', {
         method: 'POST',
@@ -147,8 +163,13 @@ messageForm.addEventListener('submit', async e => {
     });
 
     const data = await response.json();
-    addChatMessage(randomResponse(data.label), 'bot', data.label);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    setTimeout(() => {
+        const writingBubble = document.getElementById('writing-bubble');
+        writingBubble.remove();
+        addChatMessage(randomResponse(data.label), 'bot', data.label);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }, 2000);
 });
 
 // Submit feedback
