@@ -5,6 +5,7 @@ import requests
 
 app = Flask(__name__)
 agent = LexiAgent(model_path='model.joblib', vectorizer_path="vectorizer.joblib")
+script_url = "https://script.google.com/macros/s/AKfycbwir8-QGpGYs4pATclVVBxbhZ9jDJsm68l0SP_8epvhAEMj_Y8YIs3-W8yUltipI0v0fg/exec"
 
 @app.route('/')
 def index():
@@ -14,29 +15,30 @@ def index():
 def predict():
     input_data = request.get_json()['message']
     response, pred_label, preprocessed, prob = agent.ask(input_data)
+
     data = {
         'answer': response, 
         'label': pred_label, 
         'preprocessed': preprocessed, 
         'probabilities': prob.tolist()
     }
+
+    log_data = {'input': input_data, 'success': '', 'got': pred_label, 'expected': ''}
+    requests.post(script_url, json=log_data)
+
     return jsonify(data)
 
 @app.route('/feedback', methods=['POST'])
 def feedback():
-    script_url = "https://script.google.com/macros/s/AKfycbwir8-QGpGYs4pATclVVBxbhZ9jDJsm68l0SP_8epvhAEMj_Y8YIs3-W8yUltipI0v0fg/exec"
-
     # Feedback data from the request body
     feedback_data = request.get_json()
-    input_data = feedback_data['input']
-    success = feedback_data['success']
-    got = feedback_data['got']
-    expected = feedback_data['expected']
+    data = {
+        'input': feedback_data['input'],
+        'success': feedback_data['success'],
+        'got': feedback_data['got'],
+        'expected': feedback_data['expected']
+    }
 
-    # Create a dictionary with the data to submit to the Google Sheet
-    data = {'input': input_data, 'success': success, 'got': got, 'expected': expected}
-
-    # Submit the data to the Google Sheet
     response = requests.post(script_url, json=data)
 
     if response.ok:
