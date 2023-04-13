@@ -172,12 +172,11 @@ messageForm.addEventListener('submit', async e => {
 
     const data = await response.json();
 
-    setTimeout(() => {
-        const writingBubble = document.getElementById('writing-bubble');
-        writingBubble.remove();
-        addChatMessage(randomResponse(data.label), 'bot', data.label);
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-    }, 2000);
+    const writingBubble = document.getElementById('writing-bubble');
+    writingBubble.remove();
+
+    addChatMessage(randomResponse(data.label), 'bot', data.label);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
 });
 
 // Submit feedback
