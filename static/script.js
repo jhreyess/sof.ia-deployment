@@ -176,7 +176,8 @@ messageForm.addEventListener('submit', async e => {
     const writingBubble = document.getElementById('writing-bubble');
     writingBubble.remove();
 
-    addChatMessage(randomResponse(data.label), 'bot', data.label);
+    console.log(data.answer || data.label);
+    addChatMessage(data.answer || randomResponse(data.label), 'bot', data.label);
     chatContainer.scrollTop = chatContainer.scrollHeight;
     messageInput.disabled = false;
 });

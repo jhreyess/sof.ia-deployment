@@ -30,7 +30,7 @@ class LexiAgent:
         label = self.model.predict(features[1])[0]
         predicted_prob = self.model.predict_proba(features[1])[0]
         # answer = self.answer_question(perception, label)
-        return "answer", label, features[0], predicted_prob
+        return "", label, features[0], predicted_prob
     
     def clean_question_text(self, question):
         # Remove question marks and other punctuation marks

@@ -7,6 +7,11 @@ app = Flask(__name__)
 agent = LexiAgent(model_path='model.joblib', vectorizer_path="vectorizer.joblib")
 script_url = "https://script.google.com/macros/s/AKfycbwir8-QGpGYs4pATclVVBxbhZ9jDJsm68l0SP_8epvhAEMj_Y8YIs3-W8yUltipI0v0fg/exec"
 
+def is_greeting(input_data):
+    greetings = ["hola", "buenos", "tál", "estás"]
+    words = input_data.lower().split()
+    return any(word in greetings for word in words)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -14,6 +19,13 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     input_data = request.get_json()['message']
+
+    if input_data.lower() in ["si", "no", "ok"]:
+        return jsonify({"answer": "De acuerdo!"})
+
+    if is_greeting(input_data):
+        return jsonify({"answer": "Hola! Soy SOF.IA, mi propósito actualmente es clasificar tus preguntas en una categoría, ¿Cómo puedo ayudarte el día de hoy?"})
+
     response, pred_label, preprocessed, prob = agent.ask(input_data)
 
     data = {
