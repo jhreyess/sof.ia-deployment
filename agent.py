@@ -1,10 +1,10 @@
 import nltk
-import fuzzywuzzy as fuzz
+from fuzzywuzzy import fuzz
 nltk.download('punkt')
 nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
-# from faq_data import faq_dict
+from faq_data import faq_dict
 import joblib
 
 class LexiAgent:
@@ -12,7 +12,7 @@ class LexiAgent:
 
         self.stop_words = set(stopwords.words('spanish'))
         self.stemmer = SnowballStemmer('spanish')
-        # self.db = faq_dict
+        self.db = faq_dict
         
         # Load the vectorizer & Load the decision from file
         if model_path is not None:
@@ -29,8 +29,8 @@ class LexiAgent:
         features = self.extract_features(perception)
         label = self.model.predict(features[1])[0]
         predicted_prob = self.model.predict_proba(features[1])[0]
-        # answer = self.answer_question(perception, label)
-        return "", label, features[0], predicted_prob
+        answer = self.answer_question(perception, label, None)
+        return answer, label, features[0], predicted_prob
     
     def clean_question_text(self, question):
         # Remove question marks and other punctuation marks
@@ -56,13 +56,26 @@ class LexiAgent:
         vectorized_input = self.vectorizer.transform([preprocessed_input])
         return preprocessed_input, vectorized_input
     
-    # def answer_question(self, perception, label):
-    #     category = self.db.get(label)
-    #     highest_ratio = 0
-    #     matching_question = None
-    #     for question in category.keys():
-    #         ratio = fuzz.token_set_ratio(perception.lower(), question.lower())
-    #         if ratio > highest_ratio:
-    #             highest_ratio = ratio
-    #             matching_question = question
-    #     return category[matching_question]
+    def answer_question(self, perception, label, major):
+        category = self.db.get(label)
+
+        if(label == "majors"):
+            # Combine major-specific and general questions into a single dictionary
+            major_category = category.get(major, {})
+            general_category = category.get("general", {})
+            category = { **general_category, **major_category }
+
+        highest_ratio = 0
+        matching_question = None
+        for question in category.keys():
+            ratio = fuzz.token_sort_ratio(perception.lower(), question.lower())
+            print(perception.lower(), question.lower())
+            if ratio > highest_ratio:
+                highest_ratio = ratio
+                matching_question = question
+                
+        print(highest_ratio)
+        if(highest_ratio < 50):
+            return None
+        
+        return category[matching_question]

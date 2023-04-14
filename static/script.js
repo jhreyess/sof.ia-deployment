@@ -37,15 +37,40 @@ function getTranslationDict() {
 
 function randomResponse(topic){
     const phrases = [
-        "Eso parece ser una pregunta acerca de ",
-        "Tu pregunta es sobre el tema ",
-        "De lo que entiendo, estás preguntando sobre ",
-        "Si no me equivoco, estás interesado en el tema ",
-        "Creo que lo que necesitas es información sobre ",
-    ]
+        "Eso parece ser una pregunta acerca de",
+        "Tu pregunta es sobre el tema",
+        "De lo que entiendo, estás preguntando sobre",
+        "Si no me equivoco, estás interesado en el tema",
+        "Creo que lo que necesitas es información sobre",
+    ];
+
+    const sorryPhrases = [
+        "Lo siento, no pude encontrar información relacionada",
+        "Disculpa, no tengo la respuesta a esa pregunta",
+        "Lo siento, no conozco la respuesta",
+        "No tengo información sobre eso, lo siento",
+        "No estoy seguro de cómo responder a eso, disculpa"
+    ];
+    
+    const reformulationSuggestions = [
+        "Prueba reformulando la pregunta",
+        "¿Podrías intentar hacer la pregunta de otra manera?",
+        "¿Podrías ser más específico?",
+        "Por favor, intenta hacer una pregunta más concreta",
+        "¿Podrías proporcionar más detalles sobre lo que estás buscando?",
+        "Intenta preguntar de otra manera para obtener una mejor respuesta",
+        "¿Podrías reformular la pregunta de forma más clara?",
+        "Podrías intentar hacer la pregunta de una manera más simple",
+        "Intenta hacer la pregunta de una forma más detallada"
+    ];
+
     const translationDict = getTranslationDict();
-    const randomIndex = Math.floor(Math.random() * phrases.length);
-    return phrases[randomIndex] + translationDict[topic]
+
+    const randomIndex1 = Math.floor(Math.random() * sorryPhrases.length);
+    const randomIndex2 = Math.floor(Math.random() * phrases.length);
+    const randomIndex3 = Math.floor(Math.random() * reformulationSuggestions.length);
+
+    return `${sorryPhrases[randomIndex1]}. ${phrases[randomIndex2]} '${translationDict[topic]}'. ${reformulationSuggestions[randomIndex3]}.`;
 }
 
 function checkOtherInput(){
