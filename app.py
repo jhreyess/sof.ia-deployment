@@ -8,7 +8,7 @@ agent = LexiAgent(model_path='model.joblib', vectorizer_path="vectorizer.joblib"
 script_url = "https://script.google.com/macros/s/AKfycbwir8-QGpGYs4pATclVVBxbhZ9jDJsm68l0SP_8epvhAEMj_Y8YIs3-W8yUltipI0v0fg/exec"
 
 def is_greeting(input_data):
-    greetings = ["hola", "buenos", "tál", "estás"]
+    greetings = ["hola", "hola!", "hello", "hi", "buenos", "tál", "estás"]
     words = input_data.lower().split()
     return any(word in greetings for word in words)
 
@@ -24,7 +24,7 @@ def predict():
         return jsonify({"answer": "De acuerdo!"})
 
     if is_greeting(input_data):
-        return jsonify({"answer": "Hola! Soy SOF.IA, mi propósito actualmente es clasificar tus preguntas en una categoría, ¿Cómo puedo ayudarte el día de hoy?"})
+        return jsonify({"answer": "Hola! ¿Cómo puedo ayudarte?"})
 
     response, pred_label, preprocessed, prob = agent.ask(input_data)
 
