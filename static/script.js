@@ -281,3 +281,23 @@ dismissBtn.addEventListener("click", () => {
         dislikeButton.style.display = 'inline-block';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const infoBtn = document.getElementById("info-btn");
+    const infoModal = document.getElementById("info-modal");
+    const closeModal = document.getElementsByClassName("close")[0];
+
+    infoBtn.onclick = function() {
+        infoModal.style.display = "block";
+    }
+
+    closeModal.onclick = function() {
+        infoModal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == infoModal) {
+            infoModal.style.display = "none";
+        }
+    }
+});
