@@ -14,25 +14,27 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <img src="{{ url_for('static', filename='logo') }}.svg" alt="Logo" height="50">
-    </header>
-    <div class="container">
-        <div id="chat-container">
-            <div class="chat-message bot-message">
-                <div class="message-text">Hola, soy SOF.IA, ¿Cómo puedo asistirte hoy?.</div>
+    <main>
+        <header class="header">
+            <img src="{{ url_for('static', filename='logo') }}.svg" alt="Logo">
+        </header>
+        <div class="container">
+            <div id="chat-container">
+                <div class="chat-message bot-message">
+                    <div class="message-text">Hola, soy SOF.IA, ¿Cómo puedo asistirte hoy?.</div>
+                </div>
+            </div>
+            <div class="message-input-container">
+                <button id="info-btn" class="info-btn">
+                    <img src="{{ url_for('static', filename='info') }}.svg" alt="Info">
+                </button>
+                <form id="message-input-form">
+                    <input id="message-input-field" type="text" name="message" placeholder="" required>
+                    <button class="button submit-btn" type="submit">Send</button>
+                </form>
             </div>
         </div>
-        <div class="message-input-container">
-            <button id="info-btn" class="info-btn">
-                <img src="{{ url_for('static', filename='info') }}.svg" alt="Info">
-            </button>
-            <form id="message-input-form">
-                <input id="message-input-field" type="text" name="message" placeholder="" required>
-                <button class="button submit-btn" type="submit">Send</button>
-            </form>
-        </div>
-    </div>
+    </main>
     <div id="feedback-modal" class="modal">
         <div class="modal-content">
             <form id="feedback-form">
