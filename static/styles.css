@@ -50,6 +50,7 @@ body {
 .bot-message .message-text {
     background-color: #e9ecef;
     border-radius: 2em 2em 2em 0;
+    flex-basis: 66%;
 }
 
 .message-text {
@@ -63,7 +64,6 @@ body {
     display: flex;
     align-items: center;
     gap: 1em;
-    margin-left: 0.5em;
     visibility: hidden;
 }
 

@@ -69,12 +69,10 @@ class LexiAgent:
         matching_question = None
         for question in category.keys():
             ratio = fuzz.token_sort_ratio(perception.lower(), question.lower())
-            print(perception.lower(), question.lower())
             if ratio > highest_ratio:
                 highest_ratio = ratio
                 matching_question = question
                 
-        print(highest_ratio)
         if(highest_ratio < 50):
             return None
         
