@@ -282,7 +282,7 @@ dismissBtn.addEventListener("click", () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const infoBtn = document.getElementById("info-btn");
     const infoModal = document.getElementById("info-modal");
     const closeModal = document.getElementsByClassName("close")[0];
@@ -299,5 +299,67 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target == infoModal) {
             infoModal.style.display = "none";
         }
+    }
+
+    typeAndEraseExampleQuestion();
+});
+
+const exampleQuestions = [
+    "¿Cuántos créditos puedo meter por semestre?",
+    "¿Cómo puedo hacer mi horario?",
+    "¿Cómo puedo tramitar una constancia de estudios?",
+    "¿Cuánto dura la carrera?",
+    "¿Cuándo son los examenes ordinarios?",
+    "¿Cómo puedo dar de baja una materia?",
+    "¿Cómo puedo sacar una beca?",
+    "¿Cuántos semestres tiene la carrera?",
+
+];
+
+let exampleQuestionIndex = 0;
+let charIndex = 0;
+let typingTimeout;
+let isDeleting = false;
+
+function typeAndEraseExampleQuestion() {
+    const currentPlaceholder = messageInput.getAttribute("placeholder");
+    const currentQuestion = exampleQuestions[exampleQuestionIndex];
+    const isTyping = charIndex < currentQuestion.length && !isDeleting;
+    const shouldErase = charIndex === currentQuestion.length && !isDeleting;
+
+    if (isTyping) {
+        // Character is being written
+        messageInput.setAttribute("placeholder", currentPlaceholder + currentQuestion[charIndex]);
+        charIndex++;
+        typingTimeout = setTimeout(typeAndEraseExampleQuestion, 50);
+    } else if (shouldErase) {
+        // Sentence has been written
+        isDeleting = true;
+        typingTimeout = setTimeout(typeAndEraseExampleQuestion, 2000);
+    } else if (isDeleting) {
+        // Character is being ereased
+        messageInput.setAttribute("placeholder", currentPlaceholder.slice(0, -1));
+        charIndex--;
+
+        if (charIndex === 0) {
+            // Sentence has been ereased
+            isDeleting = false;
+            exampleQuestionIndex = (exampleQuestionIndex + 1) % exampleQuestions.length;
+            typingTimeout = setTimeout(typeAndEraseExampleQuestion, 500);
+        } else {
+            typingTimeout = setTimeout(typeAndEraseExampleQuestion, 20);
+        }
+    }
+};
+
+let isFirstInput = true;
+messageInput.addEventListener("input", () => {
+    if(isFirstInput){
+        clearTimeout(typingTimeout);
+        charIndex = 0;
+        isDeleting = false;
+        exampleQuestionIndex = 0;
+        messageInput.setAttribute("placeholder", "Type your question here...");
+        isFirstInput = false;
     }
 });
