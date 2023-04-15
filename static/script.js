@@ -166,8 +166,8 @@ function submitFeedback(button) {
 }
 
 function showFeedbackForm(button) {
-    feedbackForm.style.opacity = "1";
-    feedbackForm.style.pointerEvents = "all";
+    checkOtherInput();
+    document.getElementById('feedback-modal').style.display = "block";
 
     botResponse = button.closest('.bot-message').getAttribute('data-topic');
     const userMessage = button.closest('.bot-message')
@@ -239,8 +239,7 @@ feedbackForm.addEventListener('submit', async e => {
 });
 
 function disableFeedbackForm() {
-    feedbackForm.style.opacity = "0.3";
-    feedbackForm.style.pointerEvents = "none";
+    document.getElementById('feedback-modal').style.display = "none";
     otherOptionContainer.style.display = "none";
 }
 
@@ -312,8 +311,7 @@ const exampleQuestions = [
     "¿Cuándo son los examenes ordinarios?",
     "¿Cómo puedo dar de baja una materia?",
     "¿Cómo puedo sacar una beca?",
-    "¿Cuántos semestres tiene la carrera?",
-
+    "¿Cuántos semestres tiene la carrera?"
 ];
 
 let exampleQuestionIndex = 0;

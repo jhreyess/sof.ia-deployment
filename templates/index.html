@@ -33,40 +33,41 @@
             </form>
         </div>
     </div>
-    <form id="feedback-form">
-        <label for="feedback-form-field">Tu pregunta: </label>
-        <input type="text" id="feedback-form-field" name="feedback-input" placeholder="None" readonly>
-        <input type="text" id="feedback-success" name="feedback-success" value="false" style="display: none;">
-        <div>
-            <label for="feedback-expected">¿Cuál categoría consideras más apropiada a tu pregunta?:</label>
-            <select name="feedback-expected" id="feedback-expected">
-                <option value="" disabled selected>Select your option</option>
-                <option value="activities">Actividades extracurriculares</option>
-                <option value="admission">Admisión e Ingreso</option>
-                <option value="financial aid">Becas</option>
-                <option value="calendar">Calendario académico</option>
-                <option value="costs">Costos y pagos</option>
-                <option value="egress">Egreso y titulación</option>
-                <option value="research">Estancia en la investigación</option>
-                <option value="schedules">Horarios de atención</option>
-                <option value="enrollment">Inscripción de horario</option>
-                <option value="exchange">Intercambio académico</option>
-                <option value="majors">Información sobre carreras</option>
-                <option value="postgrad">Posgrado</option>
-                <option value="internship">Prácticas profesionales</option>
-                <option value="social service">Servicio Social</option>
-                <option value="procedures">Trámites</option>
-                <option value="other">Otro</option>
-            </select>
-            <div id="other-option" style="display: none;">
-                <label for="other">Other:</label>
-                <input id="feedback-expected-other" type="text" value="" name="other" id="other">
-            </div>
-            <br><br>
-            <button id="feedback-submit-btn" class="button submit-btn" type="submit" disabled>Submit Feedback</button>
-            <button id="feedback-dismiss-btn" class="button dismiss-btn" type="reset">Dismiss</button>
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <form id="feedback-form">
+                <label for="feedback-form-field">Tu pregunta: </label>
+                <input type="text" id="feedback-form-field" name="feedback-input" placeholder="None" readonly>
+                <input type="text" id="feedback-success" name="feedback-success" value="false" style="display: none;">
+                <label for="feedback-expected">¿Cuál categoría consideras más apropiada a tu pregunta?:</label>
+                <select name="feedback-expected" id="feedback-expected">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="activities">Actividades extracurriculares</option>
+                    <option value="admission">Admisión e Ingreso</option>
+                    <option value="financial aid">Becas</option>
+                    <option value="calendar">Calendario académico</option>
+                    <option value="costs">Costos y pagos</option>
+                    <option value="egress">Egreso y titulación</option>
+                    <option value="research">Estancia en la investigación</option>
+                    <option value="schedules">Horarios de atención</option>
+                    <option value="enrollment">Inscripción de horario</option>
+                    <option value="exchange">Intercambio académico</option>
+                    <option value="majors">Información sobre carreras</option>
+                    <option value="postgrad">Posgrado</option>
+                    <option value="internship">Prácticas profesionales</option>
+                    <option value="social service">Servicio Social</option>
+                    <option value="procedures">Trámites</option>
+                    <option value="other">Otro</option>
+                </select>
+                <div id="other-option" style="display: none;">
+                    <label for="other">Other:</label>
+                    <input id="feedback-expected-other" type="text" value="" name="other" id="other">
+                </div>
+                <button id="feedback-submit-btn" class="button submit-btn" type="submit" disabled>Submit Feedback</button>
+                <button id="feedback-dismiss-btn" class="button dismiss-btn" type="reset">Dismiss</button>
+            </form>
         </div>
-    </form>
+    </div>
     <div id="info-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>

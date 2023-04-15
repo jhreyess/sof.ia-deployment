@@ -3,6 +3,7 @@ body {
     background-color: #f8f9fa;
     margin: 0;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -142,15 +143,36 @@ button:disabled {
 
 #feedback-form { 
     max-width: 800px;
-    margin: 0 auto;
-    opacity: 0.3;
-    transition: 200ms opacity ease;
+    margin: 2em auto;
+}
+
+#feedback-form label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+#feedback-form button {
+    margin-top: 1em;
+    width: 100%;
 }
 
 #feedback-form-field {
     background: none;
     border: none;
-    pointer-events: none;
+}
+
+#feedback-form-field, 
+#feedback-expected, 
+#feedback-expected-other {
+    padding: 0.5em;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1em;
 }
 
 .like-clicked {
@@ -162,6 +184,8 @@ button:disabled {
 }
 
 .info-btn {
+    padding: 0;
+    margin-right: 0.75em;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -185,7 +209,8 @@ button:disabled {
     margin: 8% auto;
     padding: 1em 2em;
     border: 1px solid #888;
-    width: 80%;
+    width: fit-content;
+    max-width: 80%;
 }
 
 .close {
