@@ -25,9 +25,11 @@ faq_dict = {
         # answers for calendar questions
         "¿Cuándo son los examenes de medio curso?": "Los examenes de medio curso comenzaron el 13 de marzo y terminaron el día 24 del mismo mes.",
         "¿Cuándo son los examenes ordinarios?": "El periodo de examenes ordinarios inicia el 31 de mayo y termina el día 12 de junio.",
+        "¿Cuándo inician las clases?": "El periodo vacacional de semana santa termina el día 16 de abril.",
+        "¿Cuándo inició el semestre?": "El semestre inicio el 23 de enero del presente año.",
         "¿Cuándo es el último día de clases?": "El semestre finaliza el día 23 de junio",
         "¿Cuándo son los veranos?": "Para inscribir veranos debes hacerlo los días 26 o 27 de Junio.",
-        "¿Dónde puedo ver el calendario académico?": "Puedes consultar el calendario académico en [link]",
+        "¿Dónde puedo ver el calendario académico?": "Puedes consultar el calendario académico en [https://www.fime.uanl.mx/wp-content/uploads/2023/01/Calendario-Semestral-2023.pdf]",
         "¿Cuándo es el periodo de bajas parciales?": "El periodo de bajas parciales fue durante el 7 a 10 de febrero."
     },
     "costs": {
@@ -47,7 +49,9 @@ faq_dict = {
         "¿Cuántos créditos puedo inscribir por semestre?": "En total puedes inscribir de 9 a 27 créditos por semestre, aunque el plan de estudios sugiere que inscribas 22 por semestre.",
         "¿Cuántas materias puedo meter por semestre?": "La cantidad de materias que puedes inscribir depende del peso de los créditos, puedes meter de 9 a 27 créditos por semestre.",
         "¿Cómo puedo inscribir materias?": "Para inscribir materias necesitas esperar al periodo de inscripción, puedes consultar tu fecha en SIASE en el apartado <<Consultar fecha de inscripción>>.",
-        "¿Cómo puedo dar de baja una materia?": "Para dar de baja una materia puedes hacerlo dentro de tu hora de inscripción o esperar al periodo de bajas parciales."
+        "¿Cómo puedo hacer mi horario?": "Una vez es el periodo de inscripciones, se te asignará una fecha y hora de inscripción la cuál puedes consultar en SIASE a través de <<Consultar fecha de inscripción>>. Cuando sea tu fecha y hora asignada puedes hacer tu horario en SIASE en el apartado <<Inscripción>>, selecciona <<Clase Ordinaria>> y a partir de ahi seleccionas la materia y hora de tu preferencia, recuerda inscribir laboratorios y que solo tienes una hora para realizar tu horario.",
+        "¿Cómo puedo dar de baja una materia?": "Para dar de baja una materia puedes hacerlo dentro de tu hora de inscripción o esperar al periodo de bajas parciales. Toma en cuenta que debes dar de baja primero las materias de semestres superiores y que tiene un costo de $500.00 MXN en tu próxima cuota interna.",
+        "¿Qué pasa si dejo o repruebo una materia?": "Si repruebas una materia debes presentar un examen si estás en 2da/4ta o 6ta oportunidad, mientras que si estás en 3era o 5ta debes recursarla en sabatinos."
     },
     "exchange": {
         # answers for exchange questions
@@ -97,7 +101,8 @@ faq_dict = {
     "procedures": {
         # answers for procedures questions
         "¿Cómo puedo tramitar un Kardex?": "Puedes imprimir tu kardex no oficial a través de SIASE, para tramitar tu kardex oficial debes realizarlo a través de la pestaña <<Comercio electrónico>>.",
-        "¿Cómo puedo tramitar una constancia de estudios?": "Puedes solicitar tu constancia a través de la pestaña <<Comercio electrónico>> en SIASE y pasar a recogerla en el departamento de escolar.",
+        "¿Cómo puedo tramitar una constancia de estudios?": "Puedes solicitar tu constancia a través de la pestaña <<Comercio electrónico>> en SIASE, generar tu boleta para pagar en AFIRME y pasar a recogerla en el departamento de escolar al siguiente día hábil en un horario de 12:00 a 20:00h.",
+        "¿Cómo puedo darme de baja?": "Para dar tu baja (ya sea definitiva o temporal) de la facultad debes esperar al periodo de baja total como alumno (15 al 21 de febrero) e ingresar al apartado <<Solicitar baja voluntaria>> y seguir las instrucciones. Recuerda que no debes tener materias pendientes ni adeudos.",
     },
     "research": {
         # answers for research questions
@@ -117,5 +122,5 @@ faq_dict = {
         "¿Qué requisitos ocupo para hacer el servicio social?": "Para hacer tu servicio social ocupas haber completado 154 créditos, así como asistir a las pláticas que se realizan cada semestre.",
         "¿Cuántos créditos ocupo para realizar mi servicio social?": "Para realizar tu servicio social necesitas un mínimo de 154 créditos.",
     }
-    # ... add more categories as needed
+    # ... add more categories as needed
 }
