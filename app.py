@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
-from agent import LexiAgent
+from agent import SofiaAgent
 import requests
 
 app = Flask(__name__)
-agent = LexiAgent(model_path='model.joblib', vectorizer_path="vectorizer.joblib")
+agent = SofiaAgent(model_path='model.joblib', vectorizer_path="vectorizer.joblib")
 script_url = "https://script.google.com/macros/s/AKfycbwir8-QGpGYs4pATclVVBxbhZ9jDJsm68l0SP_8epvhAEMj_Y8YIs3-W8yUltipI0v0fg/exec"
 
 def is_greeting(input_data):

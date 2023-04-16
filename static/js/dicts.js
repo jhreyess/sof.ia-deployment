@@ -1,4 +1,5 @@
 export const translations = {
+    'about': 'Información de FIME',
     'activities': 'Actividades extracurriculares',
     'admission': 'Admisión e Ingreso',
     'financial aid': 'Becas',
@@ -6,6 +7,7 @@ export const translations = {
     'costs': 'Costos y pagos',
     'egress': 'Egreso y titulación',
     'research': 'Estancia en la investigación',
+    'safety': 'Seguridad estudiantil',
     'schedules': 'Horarios de atención',
     'enrollment': 'Inscripción de horario',
     'exchange': 'Intercambio académico',
@@ -14,6 +16,7 @@ export const translations = {
     'internship': 'Prácticas profesionales',
     'social service': 'Servicio Social',
     'procedures': 'Trámites',
+    'locations': 'Ubicaciones'
 };
 
 export const phrases = [

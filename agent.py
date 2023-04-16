@@ -7,7 +7,7 @@ from nltk.stem import SnowballStemmer
 from faq_data import faq_dict
 import joblib
 
-class LexiAgent:
+class SofiaAgent:
     def __init__(self, model_path, vectorizer_path):
 
         self.stop_words = set(stopwords.words('spanish'))
