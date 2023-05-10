@@ -48,8 +48,8 @@ faq_dict = {
         "¿Cuál es el mínimo de creditos que puedo inscribir por semestre?": "Puedes inscribir hasta un mínimo de 9 créditos por semestre, aunque el plan de estudios sugiere que inscribas 22 por semestre.",
         "¿Cuántos créditos puedo inscribir por semestre?": "En total puedes inscribir de 9 a 27 créditos por semestre, aunque el plan de estudios sugiere que inscribas 22 por semestre.",
         "¿Cuántas materias puedo meter por semestre?": "La cantidad de materias que puedes inscribir depende del peso de los créditos, puedes meter de 9 a 27 créditos por semestre.",
-        "¿Cómo puedo inscribir materias?": "Para inscribir materias necesitas esperar al periodo de inscripción, puedes consultar tu fecha en SIASE en el apartado <<Consultar fecha de inscripción>>.",
-        "¿Cómo puedo hacer mi horario?": "Una vez es el periodo de inscripciones, se te asignará una fecha y hora de inscripción la cuál puedes consultar en SIASE a través de <<Consultar fecha de inscripción>>. Cuando sea tu fecha y hora asignada puedes hacer tu horario en SIASE en el apartado <<Inscripción>>, selecciona <<Clase Ordinaria>> y a partir de ahi seleccionas la materia y hora de tu preferencia, recuerda inscribir laboratorios y que solo tienes una hora para realizar tu horario.",
+        "¿Cómo puedo inscribir materias?": "Para inscribir materias necesitas esperar al periodo de inscripción, puedes consultar tu fecha en SIASE en el apartado «Consultar fecha de inscripción».",
+        "¿Cómo puedo hacer mi horario?": "Una vez es el periodo de inscripciones, se te asignará una fecha y hora de inscripción la cuál puedes consultar en SIASE a través de «Consultar fecha de inscripción». Cuando sea tu fecha y hora asignada puedes hacer tu horario en SIASE en el apartado «Inscripción», selecciona «Clase Ordinaria» y a partir de ahi seleccionas la materia y hora de tu preferencia, recuerda inscribir laboratorios y que solo tienes una hora para realizar tu horario.",
         "¿Cómo puedo dar de baja una materia?": "Para dar de baja una materia puedes hacerlo dentro de tu hora de inscripción o esperar al periodo de bajas parciales. Toma en cuenta que debes dar de baja primero las materias de semestres superiores y que tiene un costo de $500.00 MXN en tu próxima cuota interna.",
         "¿Qué pasa si dejo o repruebo una materia?": "Si repruebas una materia debes presentar un examen si estás en 2da/4ta o 6ta oportunidad, mientras que si estás en 3era o 5ta debes recursarla en sabatinos."
     },
@@ -100,9 +100,9 @@ faq_dict = {
     },
     "procedures": {
         # answers for procedures questions
-        "¿Cómo puedo tramitar un Kardex?": "Puedes imprimir tu kardex no oficial a través de SIASE, para tramitar tu kardex oficial debes realizarlo a través de la pestaña <<Comercio electrónico>>.",
-        "¿Cómo puedo tramitar una constancia de estudios?": "Puedes solicitar tu constancia a través de la pestaña <<Comercio electrónico>> en SIASE, generar tu boleta para pagar en AFIRME y pasar a recogerla en el departamento de escolar al siguiente día hábil en un horario de 12:00 a 20:00h.",
-        "¿Cómo puedo darme de baja?": "Para dar tu baja (ya sea definitiva o temporal) de la facultad debes esperar al periodo de baja total como alumno (15 al 21 de febrero) e ingresar al apartado <<Solicitar baja voluntaria>> y seguir las instrucciones. Recuerda que no debes tener materias pendientes ni adeudos.",
+        "¿Cómo puedo tramitar un Kardex?": "Puedes imprimir tu kardex no oficial a través de SIASE, para tramitar tu kardex oficial debes realizarlo a través de la pestaña «Comercio electrónico».",
+        "¿Cómo puedo tramitar una constancia de estudios?": "Puedes solicitar tu constancia a través de la pestaña «Comercio electrónico» en SIASE, generar tu boleta para pagar en AFIRME y pasar a recogerla en el departamento de escolar al siguiente día hábil en un horario de 12:00 a 20:00h.",
+        "¿Cómo puedo darme de baja?": "Para dar tu baja (ya sea definitiva o temporal) de la facultad debes esperar al periodo de baja total como alumno (15 al 21 de febrero) e ingresar al apartado «Solicitar baja voluntaria» y seguir las instrucciones. Recuerda que no debes tener materias pendientes ni adeudos.",
     },
     "research": {
         # answers for research questions
