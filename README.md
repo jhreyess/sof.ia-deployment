@@ -1,4 +1,4 @@
-# SOF.IA (Preview version)
+![SOF.IA (Preview version)](./static/logo.svg)
 
 ## Table of contents
 - [Description](#description)
